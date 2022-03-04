@@ -4,7 +4,10 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+/*
+EMPLOYEE_ID ALANI TCKNO OLARAK DEĞİŞTİRİLMİŞTİR."
 
+ */
 @Data
 @Table(name = "EMPLOYEES")
 @Entity

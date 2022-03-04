@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+	<ui:composition template="utility/general_template.xhtml">
+
+
+
+		<ui:define name="content">
+
+			<div class = "div_content">
+
+				<center>
+
+					<h:message for="_input_TCKN"/>
+					<br/>
+
+				</center>
+
+				<h:outputText value="#{employeeManagedBean.infoMessage}"
+					rendered="#{not empty employeeManagedBean.infoMessage}"
+				/>
+
+				<ul>
+					<li>
+						<a href="javascript:void(0)" onclick="addEmployee()">
+							ÇALIŞAN EKLE
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(0)" onclick="deleteEmployee()">
+							ÇALIŞAN SİL
+						</a>
+					</li>
+
+
+					<li>
+						<a href="javascript:void(0)" onclick="updateEmployee()">
+							ÇALIŞAN GÜNCELLE
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(0)" onclick="buyBusTicket()">
+							BİLET AL
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(0)" onclick="showAboutUs()">
+							HAKKIMIZDA
+						</a>
+					</li>
+
+					<li>
+						<a href="javascript:void(0)" onclick="showPrivacyPolicy()">
+							GİZLİLİK POLİTİKASI
+						</a>
+					</li>
+
+				</ul>
+
+				<br/>
+				<br/>
+				<br/>
+
+				<!-- SİLME FORMU -->
+				<h:form>
+
+					<h:dataTable styleClass="employee_table_style">
+
+						<h:column>
+							<f:facet name="header">
+
+								TCKN
+								<br/>
+								<h:inputText value="#{employeeManagedBean.inputTCKN}" id="_input_TCKN">
+									<f:validator validatorId="TCKNValidator"/>
+								</h:inputText>
+
+							</f:facet>
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<br/>
+								<h:commandButton value="DELETE" action="#{employeeManagedBean.deleteByID()}"/>
+							</f:facet>
+						</h:column>
+
+					</h:dataTable>
+
+
+				</h:form>
+
+				<h:dataTable
+						value="#{employeeManagedBean.employeeList}" var="employee"
+						headerClass="employee_table_header"
+						rowClasses="employee_odd_row, employee_even_row"
+						styleClass="employee_table_style"
+					>
+
+
+						<h:column>
+							<f:facet name="header">TCKN</f:facet>
+							#{employee.TCKN}
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header">FIRST NAME</f:facet>
+							#{employee.firstName}
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header">LAST NAME</f:facet>
+							#{employee.lastName}
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header">SALARY</f:facet>
+							#{employee.salary}
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header">HIRE DATE</f:facet>
+							#{employee.hireDate}
+						</h:column>
+
+
+				 </h:dataTable>
+
+			</div>>
+
+		</ui:define>
+		
+	</ui:composition>
+
+</html>

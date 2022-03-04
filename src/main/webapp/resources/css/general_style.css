@@ -1,0 +1,44 @@
+.div_content li
+{
+	display: inline-block;
+	margin-left: 60px;
+}
+
+.employee_table_style
+{
+	border: 1px solid gray;
+	margin-left: 250px;
+	text-align: center;
+	padding: 2px;
+}
+
+.employee_even_row
+{
+	background-color: aqua;
+}
+
+.employee_odd_row
+{
+	background-color: beige;
+}
+
+.employee_table_header
+{
+	padding: 30px;
+}
+
+.general_template_header img
+{
+	width: 30%;
+	height: auto;
+	display: block;
+	margin: auto;
+}
+
+.general_template_footer
+{
+	margin-top: 10%;
+	text-align: center;
+	font-family: Consolas;
+	font-size: 11px;
+}
